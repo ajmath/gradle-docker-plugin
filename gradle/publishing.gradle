@@ -53,19 +53,19 @@ bintray {
 
     pkg {
         repo = 'gradle-plugins'
-        name = 'com.bmuschko:gradle-docker-plugin'
+        name = 'com.ajmath:gradle-docker-plugin'
         desc = 'Gradle plugin for managing Docker images and containers.'
-        websiteUrl = "https://github.com/bmuschko/${project.name}"
-        issueTrackerUrl = "https://github.com/bmuschko/${project.name}/issues"
-        vcsUrl = "https://github.com/bmuschko/${project.name}.git"
+        websiteUrl = "https://github.com/ajmath/${project.name}"
+        issueTrackerUrl = "https://github.com/ajmath/${project.name}/issues"
+        vcsUrl = "https://github.com/ajmath/${project.name}.git"
         licenses = ['Apache-2.0']
         labels = ['gradle', 'docker', 'container', 'image', 'lightweight', 'vm', 'linux']
         publicDownloadNumbers = true
 
         version {
             vcsTag = "v$project.version"
-            attributes = ['gradle-plugin': ["com.bmuschko.docker-remote-api:${project.group}:${project.name}",
-                                            "com.bmuschko.docker-java-application:${project.group}:${project.name}"]]
+            attributes = ['gradle-plugin': ["com.ajmath.docker-remote-api:${project.group}:${project.name}",
+                                            "com.ajmath.docker-java-application:${project.group}:${project.name}"]]
 
             gpg {
                 sign = true
