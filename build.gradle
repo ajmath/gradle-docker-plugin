@@ -1,5 +1,5 @@
 group = 'com.ajmath'
-version = '2.5.2'
+version = '2.5.3'
 
 apply plugin: 'groovy'
 apply plugin: 'idea'
