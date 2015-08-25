@@ -43,7 +43,7 @@ abstract class AbstractDockerRemoteApiTask extends DefaultTask {
 
     @TaskAction
     void start() {
-        threadContextClassLoader.withClasspath(getClasspath().files, createDockerClientConfig()) { dockerClient ->
+        runInDockerClassPath { dockerClient ->
             runRemoteCommand(dockerClient)
         }
     }
@@ -54,6 +54,10 @@ abstract class AbstractDockerRemoteApiTask extends DefaultTask {
         return certPath.listFiles().findAll( { it.name.endsWith("pem") } )
       }
       return []
+    }
+
+    void runInDockerClassPath(Closure closure) {
+      threadContextClassLoader.withClasspath(getClasspath().files, createDockerClientConfig(), closure)
     }
 
     private DockerClientConfiguration createDockerClientConfig() {
